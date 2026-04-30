@@ -1,5 +1,9 @@
-name: Demo Pipeline
-on: workflow_call
+name: CI - MAIN
+on: 
+  workflow_call:
+  push:
+    branches:
+      - 'main'
 jobs:
   Build:
     runs-on: ubuntu-latest
