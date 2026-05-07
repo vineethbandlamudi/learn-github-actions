@@ -11,6 +11,7 @@ on:
 jobs:
   Build:
     uses: vineethbandlamudi/roboshop-github-actions/.github/workflows/build.yml@main
+    secrets: inherit
     with:
       appType: '${{ inputs.appType }}'
       appName: '${{ inputs.appName }}'
@@ -22,6 +23,7 @@ jobs:
       appType: '${{ inputs.appType }}'
   DockerBuild:
     needs: Test
+    secrets: inherit
     uses: vineethbandlamudi/roboshop-github-actions/.github/workflows/build.yml@main
     with:
       appType: '${{ inputs.appType }}'
